@@ -1,0 +1,43 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+# Function to read Excel file and divide data into dataframes
+def read_excel_and_divide(file_path):
+    # Read the Excel file
+    xl = pd.ExcelFile(file_path)
+    
+    # Create a dictionary to store dataframes
+    dataframes = {}
+    
+    # Loop through each sheet in the Excel file
+    for sheet_name in xl.sheet_names:
+        # Read the sheet into a dataframe
+        df = xl.parse(sheet_name)
+        
+        # Store the dataframe in the dictionary
+        dataframes[sheet_name] = df
+    
+    return dataframes
+
+# Function to store dataframes into a database
+def store_dataframes_to_db(dataframes, db_uri):
+    # Create a SQLAlchemy engine
+    engine = create_engine(db_uri)
+    
+    # Loop through each dataframe and store it in the database
+    for table_name, df in dataframes.items():
+        # Store the dataframe in the database
+        df.to_sql(table_name, engine, index=False, if_exists='replace')
+        print(f"Stored dataframe in table '{table_name}'")
+
+# File path to the Excel file
+file_path = 'path_to_your_excel_file.xlsx'
+
+# Database URI (replace with your actual database URI)
+db_uri = 'sqlite:///your_database.db'
+
+# Read Excel file and divide data into dataframes
+dataframes = read_excel_and_divide(file_path)
+
+# Store dataframes into the database
+store_dataframes_to_db(dataframes, db_uri)
