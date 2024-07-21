@@ -18,15 +18,14 @@ Python Project
 
 File: dataScript
 Description : Python script to extract data from an Excel file, divide it into dataframes, and store it in a database using Python, used libraries like pandas, openpyxl (for reading Excel files), and SQLAlchemy (for interacting with databases).
-              Reading the Excel file:
 
+             Reading the Excel file:
              The read_excel_and_divide function reads an Excel file and divides its content into multiple dataframes, each representing a sheet in the Excel file.
              pd.ExcelFile(file_path) is used to read the Excel file.
              xl.sheet_names gives the names of all the sheets in the Excel file.
              xl.parse(sheet_name) reads each sheet into a dataframe.
             
              Storing dataframes in the database:
-            
              The store_dataframes_to_db function takes the dataframes and a database URI as input.
              It creates a SQLAlchemy engine with the given database URI.
              It loops through each dataframe and stores it in the database using the to_sql method.
