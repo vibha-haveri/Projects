@@ -8,6 +8,7 @@ This repository is designed to showcase my skills and knowledge in data analysis
 Excel Project
 
 File: excel_dataAnalysis
+
 Description: Analysis of sales profit data of gym equipments to identify trends and insights. 
              Raw data has 1000 rows with couple if brands and equipments 
              Created Pivot table  to summarize the raw data. Worked on the pivot table analysis to calculate year on year growth for each brand and equipments.
@@ -17,6 +18,7 @@ Description: Analysis of sales profit data of gym equipments to identify trends 
 Python Project
 
 File: dataScript
+
 Description : Python script to extract data from an Excel file, divide it into dataframes, and store it in a database using Python, used libraries like pandas, openpyxl (for reading Excel files), and SQLAlchemy (for interacting with databases).
 
              Reading the Excel file:
@@ -33,6 +35,7 @@ Description : Python script to extract data from an Excel file, divide it into d
 
 
 Tableau Project
+
 File: tableau_houseSalesinSeattle
 
 Description : The data is house sales data in King county near Seattle area in Washington state. It has all the data of each sold house like buyer name, sex, credit score, salary, house sq foot, age. 
